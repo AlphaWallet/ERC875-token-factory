@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Factory</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="./bundle.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<style>
+    #bodyWrap
+    {
+        /*background-color: cornsilk;*/
+        margin-left: 10%;
+        margin-bottom: 10%;
+        margin-right: 10%;
+    }
+    h1{
+        text-align: center;
+    }
+
+</style>
+
+<div class="jumbotron">
+    <h1>Ticket Factory</h1>
+</div>
+
+<div id="bodyWrap">
+    <h2 style="display: none; color: orangered;" id="notice">Contract is being deployed, please wait until alert</h2>
+    <h3>Event name: <input id="eventName"></h3>
+    <h3>Ticket symbol: <input id="ticketSymbol"/> </h3>
+    <h3>Number of tickets: <input id="numberOfTickets" type="number"></h3>
+    <h3>Event venue: <input id="eventVenue"></h3>
+    <h3>Event date: <input id="eventDate" type="date"></h3>
+    <h3>Transfer fee: <input id="transferFee" type="number"></h3>
+
+    <input type="button" class="btn-lg btn-danger" id="deploy" value="Deploy Contract">
+    <input type="button" class="btn-lg btn btn-success" id="viewOnXContract" value="Use on xcontract" style="display: none">
+    </div>
+</div>
+
+</body>
+</html>
