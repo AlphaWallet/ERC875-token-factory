@@ -25,22 +25,17 @@
 </style>
 
 <div class="jumbotron">
-    <h1>Ticket Factory</h1>
+    <h1>ERC875 Ticket Factory</h1>
 </div>
 
 <div id="bodyWrap">
-    <h2 style="display: none; color: orangered;" id="notice">Contract is being deployed, please wait until alert</h2>
+    <h2 style="display: none; color: orangered;" id="notice">Contract is being deployed, please wait...</h2>
     <h3>Event name: <input id="eventName"></h3>
     <h3>Ticket symbol: <input id="ticketSymbol"/> </h3>
-    <h3>Number of tickets: <input id="numberOfTickets" type="number"></h3>
-    <h3>Event venue: <input id="eventVenue"></h3>
-    <h3>Event date: <input id="eventDate" type="date"></h3>
-    <h3>Transfer fee: <input id="transferFee" type="number"></h3>
-    <h3>Initial ticket price: <input id="initialPrice" type="number"></h3>
-    <h3>Initial supply: <input id="initialSupply" type="number"></h3>
-
+    <h3>Ticket Data (separate by commas, if blank defaults will fill this): <textarea id="tickets"></textarea></h3>
     <input type="button" class="btn-lg btn-danger" id="deploy" value="Deploy Contract">
     <input type="button" class="btn-lg btn btn-success" id="viewOnXContract" value="Use on xcontract" style="display: none">
+    <input type="button" class="btn-lg btn btn-info" id="viewOnEtherscan" value="View on etherscan" style="display: none">
 </div>
 
 </body>
