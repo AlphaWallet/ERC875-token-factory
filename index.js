@@ -234,9 +234,11 @@ $(() => {
         //let's assume that coinbase is our account
         web3.eth.defaultAccount = web3.eth.coinbase;
         let address = web3.eth.defaultAccount;
-        organiserAddr = address;
+        organiserAddr = $("ownerAddress").val();
         paymasterAddr = address;
-        recipientAddr = address;
+        recipientAddr = $("recipientAddress").val();
+        if(organiserAddr == "") organiserAddr = address;
+        if(recipientAddr == "") recipientAddr = address;
         //once initialized, deploy
         deploy();
     }
@@ -283,12 +285,12 @@ $(() => {
                     $("#viewOnXContract").show().click(() =>
                     {
                         let url = "https://xcontract.herokuapp.com/api/" + JSON.stringify(ticketpro.abi) + "/" + contract.address;
-                        window.location.replace(url);
+                        window.location.href(url);
                     });
                     $("#viewOnEtherscan").show().click(() => {
                         let network = web3.eth.net.getId();
                         let etherscanURL = getEtherScanURL(network);
-                        window.location.replace(etherscanURL + contract.address);
+                        window.location.href(etherscanURL + contract.address);
                     });
                 }
             });
