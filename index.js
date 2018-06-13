@@ -288,20 +288,19 @@ $(() => {
                         window.location.href(url);
                     });
                     $("#viewOnEtherscan").show().click(() => {
-                        let network = web3.eth.net.getId();
-                        let etherscanURL = getEtherScanURL(network);
-                        window.location.href(etherscanURL + contract.address);
+                        redirectToEtherscan(contract.address);
                     });
                 }
             });
     }
 
-    function getEtherScanURL(networkId)
+    function redirectToEtherscan(address)
     {
-        if(networkId = 1) return "https://etherscan.io/address/";
-        else if(networkId = 3) return "https://ropsten.etherscan.io/address/";
-        else if(networkId = 4) return "https://rinkeby.etherscan.io/address/";
-        else if(networkId = 42) return "https://kovan.etherscan.io/address/";
-        return "https://etherscan.io/address/"
+        web3.version.getNetwork((err, networkId) => {
+            if (networkId == 3) window.location.href("https://ropsten.etherscan.io/address/" + address, '_blank');
+            else if (networkId == 4) window.location.href("https://rinkeby.etherscan.io/address/" + address, '_blank');
+            else if (networkId == 42) window.location.href("https://kovan.etherscan.io/address/" + address, '_blank');
+            else window.location.href("https://etherscan.io/address/" + address, '_blank');
+        });
     }
 });
