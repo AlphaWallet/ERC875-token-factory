@@ -286,7 +286,7 @@ $(() => {
                     $("#viewOnXContract").show().click(() =>
                     {
                         let url = "https://xcontract.herokuapp.com/api/" + JSON.stringify(ticketpro.abi) + "/" + contract.address;
-                        window.location.href(url);
+                        window.location.href = url
                     });
                     $("#viewOnEtherscan").show().click(() => {
                         redirectToEtherscan(contract.address);
@@ -298,10 +298,10 @@ $(() => {
     function redirectToEtherscan(address)
     {
         web3.version.getNetwork((err, networkId) => {
-            if (networkId == 3) window.location.href("https://ropsten.etherscan.io/address/" + address, '_blank');
-            else if (networkId == 4) window.location.href("https://rinkeby.etherscan.io/address/" + address, '_blank');
-            else if (networkId == 42) window.location.href("https://kovan.etherscan.io/address/" + address, '_blank');
-            else window.location.href("https://etherscan.io/address/" + address, '_blank');
+            if (networkId == 3) window.location.href = "https://ropsten.etherscan.io/address/" + address;
+            else if (networkId == 4) window.location.href = "https://rinkeby.etherscan.io/address/" + address;
+            else if (networkId == 42) window.location.href = "https://kovan.etherscan.io/address/" + address;
+            else window.location.href = "https://etherscan.io/address/" + address;
         });
     }
 });
