@@ -21,6 +21,9 @@
     h1{
         text-align: center;
     }
+    #tokenNotice {
+        color: orange;
+    }
 
 </style>
 
@@ -34,7 +37,8 @@
     <h4>Token symbol: <input id="ticketSymbol"/> </h4>
     <h4>Owner address (defaults to node address): <input id="ownerAddress"/> </h4>
     <h4>Recipient address (gets the tokens, defaults to node address): <input id="recipientAddress"/> </h4>
-    <h4>20 Tokens will be generated for you</h4>
+    <br>
+    <h4 id="tokenNotice">20 Tokens will be generated for you</h4>
     <input type="button" class="btn-lg btn-danger" id="deploy" value="Deploy Contract">
     <input type="button" class="btn-lg btn btn-success" id="viewOnXContract" value="Use on xcontract" style="display: none">
     <input type="button" class="btn-lg btn btn-info" id="viewOnEtherscan" value="View on etherscan" style="display: none">

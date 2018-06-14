@@ -234,9 +234,9 @@ $(() => {
         //let's assume that coinbase is our account
         web3.eth.defaultAccount = web3.eth.coinbase;
         let address = web3.eth.defaultAccount;
-        organiserAddr = $("ownerAddress").val();
+        organiserAddr = $("#ownerAddress").val();
         paymasterAddr = address;
-        recipientAddr = $("recipientAddress").val();
+        recipientAddr = $("#recipientAddress").val();
         if(organiserAddr == "") organiserAddr = address;
         if(recipientAddr == "") recipientAddr = address;
         //once initialized, deploy
