@@ -20,26 +20,26 @@ $(() => {
     let paymasterAddr /* let of type address here */ ;
     let recipientAddr  /* let of type address here */ ;
     let defaultTickets = [
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000",
-        "0x00000000000000000000000000000000"
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
+        "0x00000000000000000000000000000000EF6351E10000000000000000F7"
     ];
 
     let ticketproContract = web3.eth.contract([{
@@ -286,24 +286,23 @@ $(() => {
                     $("#viewOnXContract").show().click(() =>
                     {
                         let url = "https://xcontract.herokuapp.com/api/" + JSON.stringify(ticketpro.abi) + "/" + contract.address;
-                        window.location.replace(url);
+                        window.location.href(url);
                     });
                     $("#viewOnEtherscan").show().click(() => {
-                        let network = web3.eth.net.getId();
-                        let etherscanURL = getEtherScanURL(network);
-                        window.location.replace(etherscanURL + contract.address);
+                        redirectToEtherscan(contract.address);
                     });
                 }
             });
     }
 
-    function getEtherScanURL(networkId)
+    function redirectToEtherscan(address)
     {
-        if(networkId = 1) return "https://etherscan.io/address/";
-        else if(networkId = 3) return "https://ropsten.etherscan.io/address/";
-        else if(networkId = 4) return "https://rinkeby.etherscan.io/address/";
-        else if(networkId = 42) return "https://kovan.etherscan.io/address/";
-        return "https://etherscan.io/address/"
+        web3.version.getNetwork((err, networkId) => {
+            if (networkId == 3) window.location.href("https://ropsten.etherscan.io/address/" + address, '_blank');
+            else if (networkId == 4) window.location.href("https://rinkeby.etherscan.io/address/" + address, '_blank');
+            else if (networkId == 42) window.location.href("https://kovan.etherscan.io/address/" + address, '_blank');
+            else window.location.href("https://etherscan.io/address/" + address, '_blank');
+        });
     }
 });
 },{"web3":38}],2:[function(require,module,exports){
