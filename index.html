@@ -5,8 +5,6 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>ERC875 Token Factory</title>
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-        <script src="./bundle.js"></script>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -38,31 +36,31 @@
                             <h2 style="display: none; color: orangered;" id="notice">Contract is being deployed, please wait...</h2>
                             <label for="eventName" class="col-sm-2 col-form-label">Contract Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="eventName">
+                                <input class="form-control" id="eventName">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="ticketSymbol" class="col-sm-2 col-form-label">Ticket Symbol</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="ticketSymbol">
+                                <input class="form-control" id="ticketSymbol">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="ownerAddress" class="col-sm-2 col-form-label">Owner Address</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="ownerAddress">
+                                <input class="form-control" id="ownerAddress">
                                 <small id="emailHelp" class="form-text text-muted">This key controls the contract.</small>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="recipientAddress" class="col-sm-2 col-form-label">Recipient Address</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="recipientAddress">
+                                <input class="form-control" id="recipientAddress">
                                 <small id="emailHelp" class="form-text text-muted">Receives the tokens.</small>
                             </div>
                         </div>
                         <br>
-                        <h5 id="tokenNotice">20 Tokens will be generated for you, if owner or recipient address is blank; the node address will be used</h5>
+                        <h5>20 Tokens will be generated for you, if owner or recipient address is blank; the node address will be used</h5>
                         <input type="button" class="btn-y btn-xl" id="deploy" value="Deploy Contract">
                         <input type="button" class="btn-lg btn btn-success" id="viewOnXContract" value="Use on xcontract" style="display: none">
                         <input type="button" class="btn-lg btn btn-info" id="viewOnEtherscan" value="View on etherscan" style="display: none">
@@ -86,5 +84,7 @@
             </p>
         </div>
     </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="./bundle.js"></script>
 </body>
 </html>
