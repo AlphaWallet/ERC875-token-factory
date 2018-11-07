@@ -13,37 +13,16 @@ $(() => {
         alert("no injected provider found, using localhost:8545, please ensure your local node is running " +
             "and rpc and rpccorsdomain is enabled");
     }
-    let tickets /* let of type bytes32[] here */ ;
+    let tokens /* let of type bytes32[] here */ ;
     let nameOfContract /* let of type string here */ ;
     let symbolForContract /* let of type string here */ ;
     let organiserAddr /* let of type address here */ ;
     let paymasterAddr /* let of type address here */ ;
     let recipientAddr  /* let of type address here */ ;
-    let defaultTickets = [
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7",
-        "0x00000000000000000000000000000000EF6351E10000000000000000F7"
-    ];
+    let ticketproContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"indices","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"},{"name":"recipient","type":"address"}],"name":"passTo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"indices","type":"uint256[]"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getContractAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"tokens","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"},{"name":"recipient","type":"address"}],"name":"spawnPassTo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"isStormBirdContract","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"indices","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"}],"name":"trade","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"endContract","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"myBalance","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"tokens","type":"uint256[]"}],"name":"loadNewtokens","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getDecimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"indices","type":"uint256[]"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"tokens","type":"uint256[]"},{"name":"nameOfContract","type":"string"},{"name":"symbolForContract","type":"string"},{"name":"organiserAddr","type":"address"},{"name":"paymasterAddr","type":"address"},{"name":"recipientAddr","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":false,"stateMutability":"nonpayable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_indices","type":"uint256[]"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_indices","type":"uint256[]"}],"name":"TransferFrom","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"seller","type":"address"},{"indexed":false,"name":"indices","type":"uint256[]"},{"indexed":false,"name":"v","type":"uint8"},{"indexed":false,"name":"r","type":"bytes32"},{"indexed":false,"name":"s","type":"bytes32"}],"name":"Trade","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"indices","type":"uint256[]"},{"indexed":false,"name":"v","type":"uint8"},{"indexed":false,"name":"r","type":"bytes32"},{"indexed":false,"name":"s","type":"bytes32"},{"indexed":true,"name":"recipient","type":"address"}],"name":"PassTo","type":"event"}]);
 
-    var ticketproContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"indices","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"},{"name":"recipient","type":"address"}],"name":"passTo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"indices","type":"uint256[]"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getContractAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"tickets","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"},{"name":"recipient","type":"address"}],"name":"spawnPassTo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"isStormBirdContract","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"indices","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"}],"name":"trade","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"endContract","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"myBalance","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"tickets","type":"uint256[]"}],"name":"loadNewTickets","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getDecimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"indices","type":"uint256[]"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"tickets","type":"uint256[]"},{"name":"nameOfContract","type":"string"},{"name":"symbolForContract","type":"string"},{"name":"organiserAddr","type":"address"},{"name":"paymasterAddr","type":"address"},{"name":"recipientAddr","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":false,"stateMutability":"nonpayable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_indices","type":"uint256[]"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_indices","type":"uint256[]"}],"name":"TransferFrom","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"seller","type":"address"},{"indexed":false,"name":"indices","type":"uint256[]"},{"indexed":false,"name":"v","type":"uint8"},{"indexed":false,"name":"r","type":"bytes32"},{"indexed":false,"name":"s","type":"bytes32"}],"name":"Trade","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"indices","type":"uint256[]"},{"indexed":false,"name":"v","type":"uint8"},{"indexed":false,"name":"r","type":"bytes32"},{"indexed":false,"name":"s","type":"bytes32"},{"indexed":true,"name":"recipient","type":"address"}],"name":"PassTo","type":"event"}]);
-
+    let tokenVal = "0x00000000000000000000000000000000EF6351E10000000000000000F7";
+    let contractAddr = "";
     function initWeb3() {
         //let's assume that coinbase is our account
         web3.eth.defaultAccount = web3.eth.coinbase;
@@ -51,6 +30,12 @@ $(() => {
         organiserAddr = $("#ownerAddress").val();
         paymasterAddr = address;
         recipientAddr = $("#recipientAddress").val();
+        let numberOfTokens = $("#numberOfTokens").val();
+        if(numberOfTokens == "") numberOfTokens = 20; //default 20
+        for(let i = 0; i < numberOfTokens; i++)
+        {
+            tokens.push(tokenVal);
+        }
         if(organiserAddr == "") organiserAddr = address;
         if(recipientAddr == "") recipientAddr = address;
         //once initialized, deploy
@@ -62,9 +47,9 @@ $(() => {
         let eventDate = $("#eventDate").val();
         let dateTimeEvent = new Date(eventDate);
         //set all lets
-        tickets = defaultTickets;
+        tokens = defaultTokens;
         nameOfContract = $("#eventName").val();
-        symbolForContract = $("#ticketSymbol").val();
+        symbolForContract = $("#tokensymbol").val();
         //initialize web3 then deploy
         initWeb3();
     });
@@ -73,7 +58,7 @@ $(() => {
     {
         $("#notice").show(); //let the user know that the contract is being deployed
         let ticketpro = ticketproContract.new(
-            tickets,
+            tokens,
             nameOfContract,
             symbolForContract,
             organiserAddr,
@@ -94,6 +79,7 @@ $(() => {
                 }
                 if (typeof contract.address !== 'undefined')
                 {
+                    contractAddr = contract.address;
                     alert('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
                     //set xcontract button
                     $("#viewOnXContract").show().click(() =>
@@ -104,9 +90,32 @@ $(() => {
                     $("#viewOnEtherscan").show().click(() => {
                         redirectToEtherscan(contract.address);
                     });
+                    $("#addMoreTokens").show();
                 }
             });
     }
+
+    $("#addMoreTokensButton").click(() =>
+    {
+        let contract = ticketproContract.at(contractAddr);
+        let tokens = $("#addMoreTokens").val();
+        let tokensToAdd = [];
+        for(let i = 0; i < tokens; i++)
+        {
+            tokensToAdd.push(tokenVal);
+        }
+        contract.loadNewTickets.sendTransaction(tokensToAdd, (err, data) =>
+        {
+            if(err)
+            {
+                alert(err);
+            }
+            else
+            {
+                alert("Tx submitted: " + data);
+            }
+        })
+    });
 
     function redirectToEtherscan(address)
     {
