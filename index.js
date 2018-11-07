@@ -31,22 +31,11 @@ $(() => {
         paymasterAddr = address;
         recipientAddr = $("#recipientAddress").val();
         let numberOfTokens = $("#numberOfTokens").val();
-        if(numberOfTokens == "")
+        if(numberOfTokens == "") numberOfTokens = 20; //default 20
+        for(let i = 0; i < numberOfTokens; i++)
         {
-            for(let i = 0; i < 20; i++)
-            {
-                tickets.push(tokenVal);
-            }
+            tickets.push(tokenVal);
         }
-        else
-        {
-            numberOfTokens = parseInt(numberOfTokens);
-            for(let i = 0; i < numberOfTokens; i++)
-            {
-                tickets.push(tokenVal);
-            }
-        }
-
         if(organiserAddr == "") organiserAddr = address;
         if(recipientAddr == "") recipientAddr = address;
         //once initialized, deploy
