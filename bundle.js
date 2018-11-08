@@ -4,9 +4,8 @@ $(() => {
     let web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
     if (typeof window.web3 !== 'undefined')
     {
-        injectedProvider = window.web3.currentProvider;
-        web3 = new Web3(injectedProvider);
-        console.log("injected provider used: " + JSON.stringify(injectedProvider));
+        web3 = new Web3(window.web3.currentProvider);
+        console.log("injected provider used");
     }
     else
     {
