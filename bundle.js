@@ -13,20 +13,26 @@ $(() => {
         alert("no injected provider found, using localhost:8545, please ensure your local node is running " +
             "and rpc and rpccorsdomain is enabled");
     }
-    let tokens /* let of type uint256[] here */ ;
-    let nameOfContract /* let of type string here */ ;
-    let symbolForContract /* let of type string here */ ;
-    let organiserAddr /* let of type address here */ ;
-    let paymasterAddr /* let of type address here */ ;
-    let recipientAddr  /* let of type address here */ ;
+    let tokens = [] /* let of type uint256[] here */ ;
+    let nameOfContract = ""/* let of type string here */ ;
+    let symbolForContract = "" /* let of type string here */ ;
+    let organiserAddr = "" /* let of type address here */ ;
+    let paymasterAddr = ""/* let of type address here */ ;
+    let recipientAddr = "" /* let of type address here */ ;
     let ticketproContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"indices","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"},{"name":"recipient","type":"address"}],"name":"passTo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"indices","type":"uint256[]"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getContractAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"tokens","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"},{"name":"recipient","type":"address"}],"name":"spawnPassTo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"isStormBirdContract","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"expiry","type":"uint256"},{"name":"indices","type":"uint256[]"},{"name":"v","type":"uint8"},{"name":"r","type":"bytes32"},{"name":"s","type":"bytes32"}],"name":"trade","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"endContract","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"myBalance","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"tokens","type":"uint256[]"}],"name":"loadNewtokens","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getDecimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"indices","type":"uint256[]"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"tokens","type":"uint256[]"},{"name":"nameOfContract","type":"string"},{"name":"symbolForContract","type":"string"},{"name":"organiserAddr","type":"address"},{"name":"paymasterAddr","type":"address"},{"name":"recipientAddr","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":false,"stateMutability":"nonpayable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_indices","type":"uint256[]"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_indices","type":"uint256[]"}],"name":"TransferFrom","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"seller","type":"address"},{"indexed":false,"name":"indices","type":"uint256[]"},{"indexed":false,"name":"v","type":"uint8"},{"indexed":false,"name":"r","type":"bytes32"},{"indexed":false,"name":"s","type":"bytes32"}],"name":"Trade","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"indices","type":"uint256[]"},{"indexed":false,"name":"v","type":"uint8"},{"indexed":false,"name":"r","type":"bytes32"},{"indexed":false,"name":"s","type":"bytes32"},{"indexed":true,"name":"recipient","type":"address"}],"name":"PassTo","type":"event"}]);
 
     let tokenVal = "0x00000000000000000000000000000000EF6351E10000000000000000F7";
     let contractAddr = "";
-    function initWeb3() {
+    
+    function init() 
+    {
         //let's assume that coinbase is our account
         web3.eth.defaultAccount = web3.eth.coinbase;
         let address = web3.eth.defaultAccount;
+        let eventDate = $("#eventDate").val();
+        let dateTimeEvent = new Date(eventDate);
+        nameOfContract = $("#eventName").val();
+        symbolForContract = $("#tokensymbol").val();
         organiserAddr = $("#ownerAddress").val();
         paymasterAddr = address;
         recipientAddr = $("#recipientAddress").val();
@@ -44,13 +50,7 @@ $(() => {
 
     $("#deploy").click(() => 
     {
-        let eventDate = $("#eventDate").val();
-        let dateTimeEvent = new Date(eventDate);
-        //set all lets
-        nameOfContract = $("#eventName").val();
-        symbolForContract = $("#tokensymbol").val();
-        //initialize web3 then deploy
-        initWeb3();
+        init();
     });
 
     function deploy()
