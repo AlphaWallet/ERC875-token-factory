@@ -83,6 +83,8 @@ $(() => {
                         redirectToEtherscan(contract.address);
                     });
                     $("#addMoreTokens").show();
+                    $("#addMoreTokensButton").show();
+                    $("#addMoreTokensLabel").show();
                 }
             });
     }
