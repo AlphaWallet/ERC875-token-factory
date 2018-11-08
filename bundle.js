@@ -27,7 +27,7 @@ $(() => {
     {
         let address = web3.eth.defaultAccount;
         nameOfContract = $("#eventName").val();
-        symbolForContract = $("#tokensymbol").val();
+        symbolForContract = $("#tokenSymbol").val();
         organiserAddr = $("#ownerAddress").val();
         paymasterAddr = address;
         recipientAddr = $("#recipientAddress").val();
