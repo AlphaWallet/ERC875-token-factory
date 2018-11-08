@@ -12,7 +12,7 @@ $(() => {
         alert("no injected provider found, using localhost:8545, please ensure your local node is running " +
             "and rpc and rpccorsdomain is enabled");
     }
-    let tokens /* let of type bytes32[] here */ ;
+    let tokens /* let of type uint256[] here */ ;
     let nameOfContract /* let of type string here */ ;
     let symbolForContract /* let of type string here */ ;
     let organiserAddr /* let of type address here */ ;
@@ -41,12 +41,11 @@ $(() => {
         deploy();
     }
 
-
-    $("#deploy").click(() => {
+    $("#deploy").click(() => 
+    {
         let eventDate = $("#eventDate").val();
         let dateTimeEvent = new Date(eventDate);
         //set all lets
-        tokens = defaultTokens;
         nameOfContract = $("#eventName").val();
         symbolForContract = $("#tokensymbol").val();
         //initialize web3 then deploy
