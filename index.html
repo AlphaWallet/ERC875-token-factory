@@ -13,15 +13,14 @@
             <div class="starter-template">
                 <h1 style="font-weight: 600;">ERC875 Token Factory</h1>
                 <br>
-                <h5 style="font-weight:300;">This website lets you create an ERC875 non fungible token contract at the click of a button.
-                By filling out the form below you will be able to create a contract with a name, symbol and 20 stock assets.
+                <h5 style="font-weight:300;">This website lets you create an ERC875 NFT contract at the click of a button.
                 <br>
                 <br>
-                By loading this contract into AlphaWallet, you can also start using,
+                By loading this contract into <a href="http://d.alphawallet.com">AlphaWallet</a>, you can also start using,
                 transferring and selling your unique tokens.
                 <br>
                 <br>
-                We recommend using <b>AlphaWallet</b> or <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">Metamask</a> to create this contract as it is simple and secure.
+                We recommend using <a href="http://d.alphawallet.com">AlphaWallet</a> or <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">Metamask</a> to create this contract as it is simple and secure.
                 For more information about ERC875 click <a href="https://medium.com/alphawallet/erc875-a-new-standard-for-non-fungible-tokens-and-cheap-atomic-swaps-93ab85b9e7f9">here</a>.
                 </h5>
             </div>
@@ -39,48 +38,69 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="ticketSymbol" class="col-sm-2 col-form-label">Ticket Symbol</label>
+                            <label for="tokenSymbol" class="col-sm-2 col-form-label">Token Symbol</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="ticketSymbol">
+                                <input class="form-control" id="tokenSymbol">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="ownerAddress" class="col-sm-2 col-form-label">Owner Address</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="ownerAddress">
-                                <small id="emailHelp" class="form-text text-muted">This key controls the contract.</small>
+                                <small id="addressOwner" class="form-text text-muted">This key controls the contract.</small>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="recipientAddress" class="col-sm-2 col-form-label">Recipient Address</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="recipientAddress">
-                                <small id="emailHelp" class="form-text text-muted">Receives the tokens.</small>
+                                <small id="addressRecipient" class="form-text text-muted">Receives the tokens.</small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="numberOfTokens" class="col-sm-2 col-form-label">Number of tokens</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="numberOfTokens" type="number">
+                                <small id="tokenNo" class="form-text text-muted">Type in the amount of tokens you want to generate (default 20)</small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="addMoreTokens" id="addMoreTokensLabel" class="col-sm-2 col-form-label" style="display: none">Add more tokens</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="addMoreTokens" style="display: none" type="number">
+                                <input type="button" class="btn-lg btn btn-danger" id="addMoreTokensButton" value="Add tokens" style="display: none">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="state" class="col-sm-2 col-form-label">State</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="recipientAddress">
-                                <small id="emailHelp" class="form-text text-muted">The state for your event</small>
+                                <input class="form-control" id="state">
+                                <small id="stateBox" class="form-text text-muted">The state for your event</small>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="building" class="col-sm-2 col-form-label">Building</label>
+                            <label for="buildingInput" class="col-sm-2 col-form-label">Building</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="recipientAddress">
-                                <small id="emailHelp" class="form-text text-muted">The building for your event</small>
+                                <input class="form-control" id="buildingInput">
+                                <small id="buildingId" class="form-text text-muted">The building for your event</small>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="street" class="col-sm-2 col-form-label">Street</label>
+                            <label for="streetInput" class="col-sm-2 col-form-label">Street</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="recipientAddress">
-                                <small id="emailHelp" class="form-text text-muted">The street for your event</small>
+                                <input class="form-control" id="streetInput">
+                                <small id="streetInfo" class="form-text text-muted">The street for your event</small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="localityInput" class="col-sm-2 col-form-label">Locality/City</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="localityInput">
+                                <small id="localityBox" class="form-text text-muted">The locality for your event</small>
                             </div>
                         </div>
                         <br>
-                        <h5>20 Tokens will be generated for you, if owner or recipient address is blank; the node address will be used</h5>
+                        <h5><strong>If owner or recipient address is blank; the node address will be used </strong></h5>
                         <input type="button" class="btn-y btn-xl" id="deploy" value="Deploy Contract">
                         <input type="button" class="btn-lg btn btn-success" id="viewOnXContract" value="Use on xcontract" style="display: none">
                         <input type="button" class="btn-lg btn btn-info" id="viewOnEtherscan" value="View on etherscan" style="display: none">
