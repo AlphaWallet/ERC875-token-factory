@@ -5,29 +5,6 @@
 let abi = [
     {
         "constant": false,
-        "inputs": [],
-        "name": "endContract",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "tickets",
-                "type": "uint256[]"
-            }
-        ],
-        "name": "loadNewTickets",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": false,
         "inputs": [
             {
                 "name": "expiry",
@@ -61,21 +38,247 @@ let abi = [
         "type": "function"
     },
     {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "interfaceID",
+                "type": "bytes4"
+            }
+        ],
+        "name": "supportsInterface",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getLocality",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getBuildingName",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getSymbol",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "paymaster",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "ticket",
+                "type": "uint256"
+            }
+        ],
+        "name": "spawned",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "constant": false,
+        "inputs": [
+            {
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "name": "ticketIndices",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "transfer",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "spawnedTickets",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "decimals",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint8"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getThisContractAddress",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getStreet",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getState",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
         "inputs": [
             {
                 "name": "tokenIds",
                 "type": "uint256[]"
             },
             {
-                "name": "isExpired",
-                "type": "bool"
+                "name": "newLocality",
+                "type": "string"
             }
         ],
-        "name": "setExpired",
-        "outputs": [],
+        "name": "setLocality",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
         "payable": false,
-        "stateMutability": "nonpayable",
+        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -113,6 +316,67 @@ let abi = [
         "type": "function"
     },
     {
+        "constant": true,
+        "inputs": [],
+        "name": "isStormBirdContract",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256[]"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getAmountTransferred",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "street",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "constant": false,
         "inputs": [
             {
@@ -143,21 +407,230 @@ let abi = [
         "type": "function"
     },
     {
+        "constant": true,
+        "inputs": [],
+        "name": "organiser",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "locality",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenIds",
+                "type": "uint256[]"
+            },
+            {
+                "name": "newState",
+                "type": "string"
+            }
+        ],
+        "name": "setState",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "constant": false,
         "inputs": [
             {
-                "name": "_to",
-                "type": "address"
+                "name": "tokenIds",
+                "type": "uint256[]"
             },
             {
-                "name": "ticketIndices",
-                "type": "uint256[]"
+                "name": "isExpired",
+                "type": "bool"
             }
         ],
-        "name": "transfer",
+        "name": "setExpired",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenIds",
+                "type": "uint256[]"
+            },
+            {
+                "name": "newBuildingName",
+                "type": "string"
+            }
+        ],
+        "name": "setBuilding",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "endContract",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "state",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "myBalance",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256[]"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "tickets",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "loadNewTickets",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "isExpired",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "building",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getDecimals",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenIds",
+                "type": "uint256[]"
+            },
+            {
+                "name": "newStreet",
+                "type": "string"
+            }
+        ],
+        "name": "setStreet",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -336,20 +809,57 @@ let abi = [
         ],
         "name": "PassTo",
         "type": "event"
+    }
+];
+
+let shortAbi = [
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "expiry",
+                "type": "uint256"
+            },
+            {
+                "name": "ticketIndices",
+                "type": "uint256[]"
+            },
+            {
+                "name": "v",
+                "type": "uint8"
+            },
+            {
+                "name": "r",
+                "type": "bytes32"
+            },
+            {
+                "name": "s",
+                "type": "bytes32"
+            },
+            {
+                "name": "recipient",
+                "type": "address"
+            }
+        ],
+        "name": "passTo",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
     },
     {
         "constant": true,
         "inputs": [
             {
-                "name": "_owner",
-                "type": "address"
+                "name": "interfaceID",
+                "type": "bytes4"
             }
         ],
-        "name": "balanceOf",
+        "name": "supportsInterface",
         "outputs": [
             {
                 "name": "",
-                "type": "uint256[]"
+                "type": "bool"
             }
         ],
         "payable": false,
@@ -358,8 +868,13 @@ let abi = [
     },
     {
         "constant": true,
-        "inputs": [],
-        "name": "building",
+        "inputs": [
+            {
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getLocality",
         "outputs": [
             {
                 "name": "",
@@ -373,25 +888,11 @@ let abi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "decimals",
+        "name": "name",
         "outputs": [
             {
                 "name": "",
-                "type": "uint8"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "getAmountTransferred",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
+                "type": "string"
             }
         ],
         "payable": false,
@@ -420,26 +921,7 @@ let abi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "getDecimals",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "pure",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "tokenId",
-                "type": "uint256"
-            }
-        ],
-        "name": "getLocality",
+        "name": "getSymbol",
         "outputs": [
             {
                 "name": "",
@@ -454,19 +936,37 @@ let abi = [
         "constant": true,
         "inputs": [
             {
-                "name": "tokenId",
+                "name": "ticket",
                 "type": "uint256"
             }
         ],
-        "name": "getState",
+        "name": "spawned",
         "outputs": [
             {
                 "name": "",
-                "type": "string"
+                "type": "bool"
             }
         ],
         "payable": false,
         "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "name": "ticketIndices",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "transfer",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
@@ -490,148 +990,13 @@ let abi = [
     },
     {
         "constant": true,
-        "inputs": [],
-        "name": "getSymbol",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "getThisContractAddress",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
         "inputs": [
             {
                 "name": "tokenId",
                 "type": "uint256"
             }
         ],
-        "name": "isExpired",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "isStormBirdContract",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "pure",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "locality",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "myBalance",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256[]"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "name",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "organiser",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "paymaster",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "tokenIds",
-                "type": "uint256[]"
-            },
-            {
-                "name": "newBuildingName",
-                "type": "string"
-            }
-        ],
-        "name": "setBuilding",
+        "name": "getState",
         "outputs": [
             {
                 "name": "",
@@ -666,6 +1031,89 @@ let abi = [
         "type": "function"
     },
     {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "expiry",
+                "type": "uint256"
+            },
+            {
+                "name": "tickets",
+                "type": "uint256[]"
+            },
+            {
+                "name": "v",
+                "type": "uint8"
+            },
+            {
+                "name": "r",
+                "type": "bytes32"
+            },
+            {
+                "name": "s",
+                "type": "bytes32"
+            },
+            {
+                "name": "recipient",
+                "type": "address"
+            }
+        ],
+        "name": "spawnPassTo",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256[]"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "expiry",
+                "type": "uint256"
+            },
+            {
+                "name": "ticketIndices",
+                "type": "uint256[]"
+            },
+            {
+                "name": "v",
+                "type": "uint8"
+            },
+            {
+                "name": "r",
+                "type": "bytes32"
+            },
+            {
+                "name": "s",
+                "type": "bytes32"
+            }
+        ],
+        "name": "trade",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
         "constant": true,
         "inputs": [
             {
@@ -686,6 +1134,103 @@ let abi = [
         ],
         "payable": false,
         "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "tokenIds",
+                "type": "uint256[]"
+            },
+            {
+                "name": "isExpired",
+                "type": "bool"
+            }
+        ],
+        "name": "setExpired",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenIds",
+                "type": "uint256[]"
+            },
+            {
+                "name": "newBuildingName",
+                "type": "string"
+            }
+        ],
+        "name": "setBuilding",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "endContract",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "tickets",
+                "type": "uint256[]"
+            }
+        ],
+        "name": "loadNewTickets",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "isExpired",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getDecimals",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "pure",
         "type": "function"
     },
     {
@@ -712,103 +1257,27 @@ let abi = [
         "type": "function"
     },
     {
-        "constant": true,
+        "constant": false,
         "inputs": [
             {
-                "name": "ticket",
-                "type": "uint256"
-            }
-        ],
-        "name": "spawned",
-        "outputs": [
+                "name": "_from",
+                "type": "address"
+            },
             {
-                "name": "",
-                "type": "bool"
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "name": "ticketIndices",
+                "type": "uint256[]"
             }
         ],
+        "name": "transferFrom",
+        "outputs": [],
         "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "spawnedTickets",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "state",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "street",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "interfaceID",
-                "type": "bytes4"
-            }
-        ],
-        "name": "supportsInterface",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "symbol",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
+        "stateMutability": "nonpayable",
         "type": "function"
     }
 ];
-module.exports = abi;
+
+module.exports = { abi: abi, shortABI: shortAbi };
