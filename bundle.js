@@ -1328,8 +1328,13 @@ $(() => {
         street = $("#streetInput").val();
         locality = $("#localityInput").val();
         let numberOfTokens = $("#numberOfTokens").val();
-        if(numberOfTokens == "") numberOfTokens = 20; //default 20
-        for(let i = 0; i < numberOfTokens; i++)
+        if(numberOfTokens == "")
+        {
+            //default 20
+            numberOfTokens = 20;
+        }
+        console.log("number of tokens: " + numberOfTokens);
+        for(let i = 0; i < parseInt(numberOfTokens); i++)
         {
             tokens.push(tokenVal);
         }
