@@ -1294,7 +1294,14 @@ $(() => {
         web3 = new Web3(window.web3.currentProvider);
         console.log("injected provider used");
         web3.eth.defaultAccount = web3.eth.coinbase;
-        window.web3.currentProvider.enable();
+        try
+        {
+            window.web3.currentProvider.enable();
+        }
+        catch(e) {
+            //do nothing, just don't halt the program
+            console.log("backward incompatible web3 with privacy mode + " + e);
+        }
     }
     else
     {
