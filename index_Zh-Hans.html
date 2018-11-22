@@ -4,27 +4,26 @@
         <meta charset="UTF-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>ERC875 Token Factory</title>
+        <title>ERC875 令牌工场</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <div class="container">
             <div class="starter-template">
-                <h1 style="font-weight: 600;">ERC875 Token Factory</h1>
+                <h1 style="font-weight: 600;">ERC875 令牌工厂</h1>
                 <br>
                 <h7 style="font-weight: 100;">：<a href="./index.html"> English </a> <a href="./index_es.html"> Español </a> <a href="./index_Zh-Hans.html">简体中文</a>   <a href="./index_Zh-Hant.html">繁體中文</a> <a href="./index_ja.html">日本語</a> </h1>
                 <br>
                 <br>
-                <h5 style="font-weight: 300;">This website lets you create an ERC875 NFT contract at the click of a button.
+                <h5 style="font-weight:300;">一键创建自己的 ERC875 NFT 智能合约.
                 <br>
                 <br>
-                By loading this contract into <a href="http://d.alphawallet.com">AlphaWallet</a>, you can also start using,
-                transferring and selling your unique tokens.
+                                        导入  <a href="http://d.alphawallet.com">AlphaWallet</a>, 然后开始发行、使用、出售属于自己的 Token!
                 <br>
                 <br>
-                We recommend using <a href="http://d.alphawallet.com">AlphaWallet</a> or <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">Metamask</a> to create this contract as it is simple and secure.
-                For more information about ERC875 click <a href="https://medium.com/alphawallet/erc875-a-new-standard-for-non-fungible-tokens-and-cheap-atomic-swaps-93ab85b9e7f9">here</a>.
+                                       推荐使用 <a href="http://d.alphawallet.com">AlphaWallet</a> 或 <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">Metamask</a> 来创建，简单安全又方便。
+                                      想了解更多关于 ERC875，戳 <a href="https://medium.com/alphawallet/erc875-a-new-standard-for-non-fungible-tokens-and-cheap-atomic-swaps-93ab85b9e7f9">这里</a>.
                 </h5>
             </div>
         </div>
@@ -35,42 +34,42 @@
                     <form>
                         <div class="form-group row">
                             <h2 style="display: none; color: orangered;" id="notice">Contract is being deployed, please wait...</h2>
-                            <label for="eventName" class="col-sm-2 col-form-label">Contract Name</label>
+                            <label for="eventName" class="col-sm-2 col-form-label">合约名称</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="eventName">
-                                <small id="contractNameEvent" class="form-text text-muted">The name for the contract.</small>
+                                <small id="contractNameEvent" class="form-text text-muted">给你要创建的智能合约起个名字</small>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="tokenSymbol" class="col-sm-2 col-form-label">Token Symbol</label>
+                            <label for="tokenSymbol" class="col-sm-2 col-form-label">Token 符号</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="tokenSymbol">
-                                <small id="symbolName" class="form-text text-muted">The Symbol for the contract.</small>
+                                <small id="symbolName" class="form-text text-muted">T给你要创建的智能合约起一个标记符号</small>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="ownerAddress" class="col-sm-2 col-form-label">Owner Address</label>
+                            <label for="ownerAddress" class="col-sm-2 col-form-label">所有者地址</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="ownerAddress">
-                                <small id="addressOwner" class="form-text text-muted">This key controls the contract.</small>
+                                <small id="addressOwner" class="form-text text-muted">这个地址控制智能合约</small>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="recipientAddress" class="col-sm-2 col-form-label">Recipient Address</label>
+                            <label for="recipientAddress" class="col-sm-2 col-form-label">接收地址</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="recipientAddress">
-                                <small id="addressRecipient" class="form-text text-muted">Receives the tokens.</small>
+                                <small id="addressRecipient" class="form-text text-muted">这个地址用来接收 tokens.</small>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="numberOfTokens" class="col-sm-2 col-form-label">Number of tokens</label>
+                            <label for="numberOfTokens" class="col-sm-2 col-form-label"> Tokens的数量</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="numberOfTokens" type="number">
-                                <small id="tokenNo" class="form-text text-muted">Type in the amount of tokens you want to generate (default 20)</small>
+                                <small id="tokenNo" class="form-text text-muted">输入你想要生成的 tokens 的数量 (默认20)</small>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="addMoreTokens" id="addMoreTokensLabel" class="col-sm-2 col-form-label" style="display: none">Add more tokens</label>
+                            <label for="addMoreTokens" id="addMoreTokensLabel" class="col-sm-2 col-form-label" style="display: none">添加更多 tokens</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="addMoreTokens" style="display: none" type="number">
                                 <input type="button" class="btn btn btn-danger" id="addMoreTokensButton" value="Add tokens" style="display: none">
@@ -105,7 +104,7 @@
                             </div>
                         </div>
                         <br>
-                        <h5><strong>If owner or recipient address is blank; the node address will be used </strong></h5>
+                        <h5><strong>如果所有者或接收者的地址留空，节点地址将被默认使用 </strong></h5>
                         <input type="button" class="btn-y btn-xl" id="deploy" value="Deploy Contract">
                         <input type="button" class="btn btn btn-success" id="viewOnXContract" value="Use on xcontract" style="display: none">
                         <input type="button" class="btn btn btn-info" id="viewOnEtherscan" value="View on etherscan" style="display: none">
@@ -116,7 +115,7 @@
     </div>
     <div class="container">
         <div class="starter-template">
-            <h4 class="mb-4" style="font-weight:300;">Start selling and distributing your token instantly on AlphaWallet: </h4>
+            <h4 class="mb-4" style="font-weight:300;">准备好了吗？马上来 AlphaWallet 开始发行和出售自己的 Token！ </h4>
             <p id="download_app">
                 <a href="https://play.google.com/store/apps/details?id=io.stormbird.wallet">
                     <img width="110" height="40" alt="Google Playstore"
