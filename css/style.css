@@ -5,6 +5,11 @@ body {
   padding: 3rem 1.5rem;
 }
 
+footer {
+  color: white;
+   background-color: #20232D;
+                padding: 25px;
+}
 
 h2,
 h3,
@@ -36,8 +41,15 @@ p {
 
 .btn-y {
 display: inline-block;
-background-color: #f9d021;
-font-family: "Source Sans Pro", sans-serif;
+color: black;
+          background: #007bff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #007bff, #10B4FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #007bff, #10B4FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+          -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+font-family: "Inter-UI", sans-serif;
 border-radius: 18.7px;
 border: 0;
 color: white;
@@ -46,12 +58,17 @@ margin-right: auto;
 margin-left: 15px; }
 @media (min-width: 992px) {
       .btn-y {
-          background-color: #f9d021;
-          font-family: "Source Sans Pro", sans-serif;
-          border-radius: 18.7px;
+                  display: block;
+          background: #007bff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #007bff, #10B4FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #007bff, #10B4FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+          -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+          font-family: "Inter-UI", sans-serif;
+          border-radius: 30px;
           border: 0;
-          color: white;
-          margin-top: 1em;
           margin-right: auto;
           margin-left: auto;
         } }
