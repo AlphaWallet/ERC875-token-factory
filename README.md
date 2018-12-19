@@ -6,4 +6,5 @@ Try it out here: https://x.alphawallet.com
 # Donations
 
 If you support the cause, we could certainly use donations to help fund development:
+
 0xbc8dAfeacA658Ae0857C80D8Aa6dE4D487577c63
