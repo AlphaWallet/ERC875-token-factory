@@ -9,21 +9,28 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <nav class="navbar navbar-light mt-3">
+            <a style="margin-left: 1.5em;" class="navbar-brand" href="https://alphawallet.com">
+                <img src="https://alphawallet.com/wp-content/uploads/2018/09/awlogo.png" width="130" height="25">
+            </a>
+            <form class="form-inline" style="margin-left: 1.5em; margin-top: 25px;">
+                <a class="btn btn-sm btn-outline-dark" href="./index.html" role="button">English</a>
+                <a style="margin-left: 8px;" class="btn btn-sm btn-outline-dark" href="./index_Zh-Hans.html" role="button">简体中文</a>
+                <a style="margin-left: 8px;" class="btn btn-sm btn-outline-dark" href="./index_Zh-Hant.html" role="button">繁體中文</a>
+            </form>
+        </nav>
         <div class="container">
             <div class="starter-template">
-                <h1 style="font-weight: 600;">ERC875 令牌工廠</h1>
-                <br>
-                <h7 style="font-weight: 100;">：<a href="./index.html"> English </a> <a href="./index_es.html"> Español </a> <a href="./index_Zh-Hans.html">简体中文</a>   <a href="./index_Zh-Hant.html">繁體中文</a> <a href="./index_ja.html">日本語</a> </h1>
-                <br>
+                <h1 style="font-weight: 600;">NFT 令牌工廠</h1>
                 <br>
                 <h5 style="font-weight:300;">一鍵創建屬於你自己的 ERC 875 智能合約.
                 <br>
                 <br>
-                                       然後加載進 <a href="http://d.alphawallet.com">AlphaWallet</a>, 就可以開始自己使用、交易、出售屬於你的唯一的 Token 了！
+                然後加載進 <a href="http://d.alphawallet.com">AlphaWallet</a>, 就可以開始自己使用、交易、出售屬於你的唯一的 Token 了！
                 <br>
                 <br>
-                                       我們推薦使用 <a href="http://d.alphawallet.com">AlphaWallet</a> 或 <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">Metamask</a> 來創建智能合約，簡單又安全。
-                                       如果想要了解更多有關 ERC 875 的信息，請點擊 <a href="https://medium.com/alphawallet/erc875-a-new-standard-for-non-fungible-tokens-and-cheap-atomic-swaps-93ab85b9e7f9">這裏</a>.
+                我們推薦使用 <a href="http://d.alphawallet.com">AlphaWallet</a> 或 <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en">Metamask</a> 來創建智能合約，簡單又安全。
+                如果想要了解更多有關 ERC 875 的信息，請點擊 <a href="https://medium.com/alphawallet/erc875-a-new-standard-for-non-fungible-tokens-and-cheap-atomic-swaps-93ab85b9e7f9">這裏</a>.
                 </h5>
             </div>
         </div>
@@ -105,6 +112,7 @@
                         </div>
                         <br>
                         <h5><strong>If owner or recipient address is blank; the node address will be used </strong></h5>
+                        <br>
                         <input type="button" class="btn-y btn-xl" id="deploy" value="Deploy Contract">
                         <input type="button" class="btn btn btn-success" id="viewOnXContract" value="Use on xcontract" style="display: none">
                         <input type="button" class="btn btn btn-info" id="viewOnEtherscan" value="View on etherscan" style="display: none">
@@ -113,31 +121,27 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="starter-template">
-            <h4 class="mb-4" style="font-weight:300;">開始在  AlphaWallet 發行和出售您自己的 Tokens！: </h4>
-            <p id="download_app">
-                <a href="https://play.google.com/store/apps/details?id=io.stormbird.wallet">
-                    <img width="110" height="40" alt="Google Playstore"
-                    src="images/googleplay.png"/>
-                </a>
-                <a href="https://itunes.apple.com/app/alphawallet/id1358230430?mt=8">
-                    <img class="ml-2" width="110" height="40" alt="App Store"
-                    src="images/appstore.png"/>
-                </a>
-            </p>
-        </div>
-    </div>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src="./bundle.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119752961-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-119752961-1');
-</script>
-</body>
+    <footer>
+        <h2 class="mt-5 text-center" style="font-weight:300;">Start selling and distributing your token instantly on <b>AlphaWallet</b> </h2>
+        <p id="download_app">
+            <div class="row m-5">
+                <div class="col-lg-12">
+                    <div align="center">
+                        <a href="https://apple.co/2OQRS7c" target="_blank"><img style="margin: 5px;" src="https://alphawallet.com/wp-content/uploads/2018/10/app-store-button-light.png" width="200px"></a>
+                        <a href="https://play.google.com/store/apps/details?id=io.stormbird.wallet&hl=en_SG" target="_blank"><img style="margin: 7px;" src="https://alphawallet.com/wp-content/uploads/2018/10/googleplay1.png" width="190px"></a><br>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src="./bundle.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119752961-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-119752961-1');
+        </script>
+    </body>
 </html>
