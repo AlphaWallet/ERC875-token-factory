@@ -1,7 +1,7 @@
-# Token Factory
+# Tickets Factory
 An easy to use website that allows you to deploy your own unique token contract using ERC875
 
-Try it out here: https://x.alphawallet.com
+Try it out here: https://tf.alphawallet.com
 
 # Donations
 If you support the cause, we could certainly use donations to help fund development:
