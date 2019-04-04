@@ -35,7 +35,7 @@ $(() => {
     let street = "";
     let erc875Contract = web3.eth.contract(abi);
     let contractAddr = "";
-    let tokenVal = "0x00000000000000000000000000000000EF6351E10000000000000000F7";
+    let tokenVal = "0x555331393835313130363231303632372e332d3035303FFFF0000000000000000";
     let locality = "";
 
     function init() 
